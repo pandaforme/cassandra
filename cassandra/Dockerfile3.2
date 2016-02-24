@@ -6,7 +6,7 @@ FROM centos:centos6
 
 # Add source repositories
 ADD src/epel6.repo /etc/yum.repos.d/epel6.repo
-ADD src/datastax.repo /etc/yum.repos.d/datastax.repo
+ADD src/datastax3.2.repo /etc/yum.repos.d/datastax.repo
 
 # Install Java, Install packages (sshd + supervisord + monitoring tools + cassandra)
 RUN yum -y groupinstall "Development Tools" && \
@@ -16,7 +16,7 @@ RUN yum -y groupinstall "Development Tools" && \
     yum -y install net-tools nfs-utils openssl-devel && \
     yum -y install git screen tmux wget zsh && \
     yum install -y wget tar openssh-server openssh-clients supervisor sysstat sudo which openssl hostname && \
-    yum install -y dsc22
+    yum install -y datastax-ddc
 
 
 # Install Python 2.7

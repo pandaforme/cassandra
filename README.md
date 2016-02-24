@@ -20,7 +20,8 @@ Prerequisites
 - Verify that the docker command works. Try running 'docker ps' for example.
 - Build the cassandra and opscenter images (optional)
 
-        ./cassandra/build.sh
+        ./cassandra/build.sh  //install Cassandra 2.2 and use image name: poklet/cassandra
+        ./cassandra/build.sh 3.2 //install Cassandra 3.2 use image name: poklet/cassandra3.2
         ./opscenter/build.sh
 
 The last step is optional because Docker will automatically pull the images from [index.docker.io](https://index.docker.io) if you don't already have them. The build process needs an Internet connection, but it is executed only once and then cached on Docker. If you modify the scripts, this is also how you can re-build the images with your changes.
